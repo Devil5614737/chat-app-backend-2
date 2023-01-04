@@ -8,6 +8,7 @@ const signup = require("./routes/signup");
 const users = require("./routes/users");
 const chat = require("./routes/chat");
 const message = require("./routes/message");
+const mongoose=require('mongoose')
 
 dotenv.config({ path: "./.env" });
 
@@ -15,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 
 // Initializing  Database
+mongoose.set('strictQuery', true);
 DB();
 
 // routes
